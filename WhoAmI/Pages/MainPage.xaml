@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:header="clr-namespace:WhoAmI.Controls"
+             x:Class="WhoAmI.Pages.MainPage"
+             BackgroundColor="LightGreen" 
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="0.5*,1*,4*,3*,1*"
+          ColumnDefinitions="1*">
+
+        <Grid  Grid.Row="0"
+               BackgroundColor="Gold" 
+               VerticalOptions="End"
+               ColumnDefinitions="3*,3*,1*,3*,1*,3*">
+
+            <ImageButton Grid.Column="0"
+                         Source="homeicon.svg"
+                         Clicked="HomeIcon_Clicked"/>
+
+            <ImageButton Grid.Column="1"
+                         Source="coinicon.png"
+                         Clicked="CoinIcon_Clicked"/>
+            <Label   x:Name="coinlbl" 
+                     Grid.Column="2"
+                     Text="{Binding Coinshow}" 
+                     FontSize="Medium"
+                     TextColor="Black"
+                     VerticalOptions="Center"/>
+
+            <ImageButton Grid.Column="3"
+                         Source="hearticon.png"
+                         Clicked="HeartIcon_Clicked"/>
+            <Label   x:Name="heartlbl" 
+                     Grid.Column="4"
+                     Text="{Binding Heartshow}" 
+                     FontSize="Medium"
+                     TextColor="Black"
+                     VerticalOptions="Center"/>
+
+            <ImageButton Grid.Column="5"
+                         Source="usericon.png"/>
+
+        </Grid>
+
+        <Label x:Name="lvl"
+               Grid.Row="1"
+               Text="{Binding GameLevel}"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"/>
+        
+        <Frame Grid.Row="2"
+               CornerRadius="40"
+               BorderColor="Black">
+            <Image x:Name="img"
+                   Source="{Binding Image_name}"
+                   HeightRequest="350"/>
+        </Frame>
+
+        <Grid Grid.Row="3"
+              RowDefinitions="1*,1*"
+              ColumnDefinitions="1*,1*"
+              Margin="10">
+            <Button x:Name="btn1"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="5"
+                    BorderColor="Black"
+                    Text="{Binding Button_1}"
+                    TextColor="White"
+                    FontSize="Large"
+                    BackgroundColor="blue"
+                    Clicked="btn1_Clicked"/>
+            <Button x:Name="btn2"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="5"
+                    BorderColor="Black"
+                    Text="{Binding Button_2}"
+                    TextColor="White"
+                    FontSize="Large"
+                    BackgroundColor="Blue"
+                    Clicked="btn2_Clicked"/>
+            <Button x:Name="btn3"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="5"
+                    BorderColor="Black"
+                    Text="{Binding Button_3}"
+                    TextColor="White"
+                    FontSize="Large"
+                    BackgroundColor="Blue"
+                    Clicked="btn3_Clicked"/>
+            <Button x:Name="btn4"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="5"
+                    BorderColor="Black"
+                    Text="{Binding Button_4}"
+                    TextColor="White"
+                    FontSize="Large"
+                    BackgroundColor="Blue"
+                    Clicked="btn4_Clicked"/>
+        </Grid>
+        <Button x:Name="checkbtn" 
+                Grid.Row="4"
+                Text="Check"
+                FontSize="Large"
+                BackgroundColor="LightGray"
+                TextColor="Black"
+                BorderColor="Black"
+                BorderWidth="2"
+                Clicked="checkbtn_Clicked"/>
+        <Button x:Name="continuebtn" 
+                Grid.Row="4"
+                Text="Continue"
+                FontSize="Large"
+                IsVisible="False"
+                BackgroundColor="Blue"
+                TextColor="Black"
+                BorderColor="Black"
+                BorderWidth="2"
+                Clicked="ContinueButton_Clicked"/>
+    </Grid>
+
+</ContentPage>

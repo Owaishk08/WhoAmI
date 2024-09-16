@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:header="clr-namespace:WhoAmI.Controls"
+             x:Class="WhoAmI.Pages.ShopingPage"
+             Title="ShopingPage"
+             BackgroundColor="LightGreen"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="0.5*,9.5*">
+
+        <Grid Grid.Row="0"
+              BackgroundColor="Gold" 
+              VerticalOptions="End"
+              ColumnDefinitions="3*,3*,1*,3*,1*,3*">
+
+            <ImageButton  Grid.Column="0"
+                          Source="homeicon.svg"
+                          Clicked="HomeIcon_Clicked"/>
+
+            <ImageButton Grid.Column="1"
+                         Source="coinicon.png"/>
+            <Label x:Name="coinlbl" 
+                    Grid.Column="2"
+                    Text="{Binding Coinshow}" 
+                    FontSize="Medium"
+                    TextColor="Black"
+                    VerticalOptions="Center"/>
+
+            <ImageButton Grid.Column="3"
+                          Source="hearticon.png"
+                          Clicked="HeartIcon_Clicked"/>
+            <Label x:Name="heartlbl" 
+                    Grid.Column="4"
+                    Text="{Binding Heartshow}" 
+                    FontSize="Medium"
+                    TextColor="Black"
+                    VerticalOptions="Center"/>
+
+            <ImageButton Grid.Column="5"
+                        Source="usericon.png"/>
+
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1">
+            <Label Text="Coin"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Large"
+                   BackgroundColor="Gold"
+                   Margin="0,10"/>
+            
+            <Frame Margin="0,10"
+                   HeightRequest="120"
+                   Grid.ColumnSpan="3"
+                   BackgroundColor="White"
+                   BorderColor="Black">
+                
+                <Grid ColumnDefinitions="0.4*,0.6*">
+                <Image Grid.Column="0" 
+                       Source="coinicon"
+                       HorizontalOptions="StartAndExpand"
+                       Aspect="Fill"/>
+                <Label Grid.Column="1" 
+                       Text="Get Coins!"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       FontSize="Medium"/>
+                <Button Grid.Column="1" 
+                        Text="$99"
+                        FontSize="Medium"
+                        WidthRequest="120"
+                        HeightRequest="50"
+                        VerticalOptions="EndAndExpand"
+                        Clicked="Get5Hearts"/>
+                </Grid>
+                       
+            </Frame>
+                
+            <Label Text="Heart"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Large"
+                   BackgroundColor="Gold"
+                   Margin="0,10"/>
+
+            <Frame Margin="0,10"
+                   HeightRequest="120"
+                   Grid.ColumnSpan="3"
+                   BackgroundColor="White"
+                   BorderColor="Black">
+
+                <Grid ColumnDefinitions="0.4*,0.6*">
+                    <Image Grid.Column="0" 
+                           Source="hearticon"
+                           HorizontalOptions="StartAndExpand"
+                           Aspect="Fill"/>
+                    <Label Grid.Column="1" 
+                           Text="Refill your Life x5!"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"
+                           FontSize="Medium"/>
+                    <Button Grid.Column="1" 
+                            Text="15"
+                            FontSize="Medium"
+                            WidthRequest="120"
+                            HeightRequest="50"
+                            VerticalOptions="EndAndExpand"
+                            ImageSource="coinicon"
+                            Clicked="Get5Hearts"/>
+                </Grid>
+            </Frame>
+
+            <Frame Margin="0,10"
+                   HeightRequest="120"
+                   Grid.ColumnSpan="3"
+                   BackgroundColor="White"
+                   BorderColor="Black">
+
+                <Grid ColumnDefinitions="0.4*,0.6*">
+                    <Image Grid.Column="0" 
+                           Source="hearticon"
+                           HorizontalOptions="StartAndExpand"
+                           Aspect="Fill"/>
+                    <Label Grid.Column="1" 
+                           Text="Refill your Life x3!"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"
+                           FontSize="Medium"/>
+                    <Button Grid.Column="1" 
+                            Text="10"
+                            FontSize="Medium"
+                            WidthRequest="120"
+                            HeightRequest="50"
+                            VerticalOptions="EndAndExpand"
+                            ImageSource="coinicon"
+                            Clicked="Get3Hearts"/>
+                </Grid>
+            </Frame>
+
+            <Frame Margin="0,10"
+                   HeightRequest="120"
+                   Grid.ColumnSpan="3"
+                   BackgroundColor="White"
+                   BorderColor="Black">
+
+                <Grid ColumnDefinitions="0.4*,0.6*">
+                    <Image Grid.Column="0" 
+                           Source="hearticon"
+                           HorizontalOptions="StartAndExpand"
+                           Aspect="Fill"/>
+                    <Label Grid.Column="1" 
+                           Text="Refill your Life x1!"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"
+                           FontSize="Medium"/>
+                    <Button Grid.Column="1" 
+                            Text="5"
+                            FontSize="Medium"
+                            WidthRequest="120"
+                            HeightRequest="50"
+                            VerticalOptions="EndAndExpand"
+                            ImageSource="coinicon"
+                            Clicked="Get1Hearts"/>
+                </Grid>
+            </Frame>
+
+        </VerticalStackLayout>
+    </Grid>
+    
+</ContentPage>
